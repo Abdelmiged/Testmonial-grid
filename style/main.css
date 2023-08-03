@@ -1,0 +1,249 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* html,
+body {
+    height: 100vh;
+} */
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* !!!!!  CUSTOM CSS  !!!!! */
+
+
+:root {
+    /* Primary Colors */
+    --clr-moderate-violet: hsl(263, 55%, 52%);
+    --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --clr-very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --clr-white: hsl(0, 0%, 100%);
+
+
+    /* Neutral Colors */
+    --clr-light-gray: hsl(0, 0%, 81%);
+    --clr-light-grayish-blue: hsl(210, 46%, 95%);
+    --clr-light-violet: hsl(265, 55%, 66%);
+
+
+    /* Font Family */
+    --ff-Barlow-Semi-Condensed: 'Barlow Semi Condensed', sans-serif;
+
+
+    /* Font Weights */
+    --fw-medium: 500;
+    --fw-semibold: 600;
+
+
+    /* Border Radius */
+    --border-radius: 6px;
+}
+
+body {
+    background-color: var(--clr-light-grayish-blue);
+    font-family: var(--ff-Barlow-Semi-Condensed);
+    padding: 3.5rem 0;
+}
+
+
+/* Utility Class */
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+}
+
+main > div {
+    border-radius: var(--border-radius);
+}
+
+main > :first-child {
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-color: var(--clr-moderate-violet);
+}
+
+.sub-container {
+    padding: 1.2em 1.2em 1.7em;
+}
+
+.personal-info-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2em;
+}
+
+main > :first-child > .personal-info-container > img {
+    border: 2.4px solid var(--clr-light-violet);
+}
+
+.personal-info-container > img {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.personal-info-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 1.6em;
+    line-height: 1.2;
+    font-size: .9em;
+    text-transform: capitalize;
+    color: var(--clr-white);
+}
+
+.personal-info-container > div :last-child {
+    opacity: .5;
+}
+
+.sub-container > p {
+    color: var(--clr-white);
+    font-weight: var(--fw-semibold);
+    font-size: 1.1em;
+    line-height: 1.25;
+    margin-bottom: .6em;
+}
+
+p + blockquote {
+    color: var(--clr-white);
+    font-size: .8em;
+    opacity: .7;
+}
+
+main > :nth-child(2) {
+    background-color: var(--clr-very-dark-grayish-blue);
+}
+
+main > :nth-child(3),
+main> :nth-child(5) {
+    background-color: var(--clr-white);
+}
+
+main > :nth-child(3) > .personal-info-container > div,
+main > :nth-child(5) > .personal-info-container > div {
+    color: var(--clr-very-dark-grayish-blue);
+}
+
+main > :nth-child(3) > p,
+main > :nth-child(5) > p {
+    color: var(--clr-very-dark-grayish-blue);
+}
+
+main > :nth-child(3) > p + blockquote,
+main > :nth-child(5) > p + blockquote {
+    color: var(--clr-very-dark-grayish-blue);
+}
+
+main > :nth-child(4) {
+    background-color: var(--clr-very-dark-blackish-blue);
+}
+
+main > :nth-child(4) > .personal-info-container > img {
+    border: 2.4px solid var(--clr-moderate-violet);
+}
+
+@media (min-width: 330px) {
+    .container {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1320px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        max-width: 63.125rem;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1.3rem;
+    }
+
+    .sub-container {
+        padding: 1.2em 1.4em 1.2em;
+    }
+
+    .sub-container > p {
+        margin-bottom: 1em;
+    }
+
+    p + blockquote {
+        font-size: .78em;
+    }
+
+    .personal-info-container > img {
+        width: 2.2em;
+        height: 2.2em;
+    }
+
+    main > .sub-container > p {
+        font-size: 1.3em;
+    }
+
+    main > :nth-child(1) {
+        grid-area: 1 / 1 / span 1 / span 2;
+    }
+
+    main > :nth-child(2) {
+        grid-area: 1 / 3 / span 1 / span 1;
+    }
+
+    main > :nth-child(3) {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+
+    main > :nth-child(4) {
+        grid-area: 2 / 2 / span 1 / span 2;
+    }
+
+    main > :nth-child(5) {
+        grid-area: 1 / 4 / span 2 / span 1;
+    }
+}
