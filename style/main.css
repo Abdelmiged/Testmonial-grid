@@ -56,7 +56,7 @@ picture {
     --clr-light-gray: hsl(0, 0%, 81%);
     --clr-light-grayish-blue: hsl(210, 46%, 95%);
     --clr-light-violet: hsl(265, 55%, 66%);
-
+    --clr-black: hsl(0, 0%, 0%);
 
     /* Font Family */
     --ff-Barlow-Semi-Condensed: 'Barlow Semi Condensed', sans-serif;
@@ -196,13 +196,19 @@ main > :nth-child(4) > .personal-info-container > img {
         align-items: center;
     }
     .container {
-        max-width: 63.125rem;
+        max-width: 70.125rem;
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 1.3rem;
+        column-gap: 2rem;
     }
 
     .sub-container {
-        padding: 1.2em 1.4em 1.2em;
+        padding: 1.2em 2em 1.2em;
+        transition: all .25s ease-in-out;
+    }
+
+    .sub-container:hover {
+        transform: scale(1.05);
+        box-shadow: 1px 1px 16px 1px var(--clr-black);
     }
 
     .sub-container > p {
